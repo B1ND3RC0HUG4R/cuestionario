@@ -10,6 +10,14 @@ function changeSection(idUnlook, idLook, buttonLook, buttonUnlook){
     document.documentElement.scrollTop = 0;
 }
 
+function showCarrusel(){
+    $('#modalCarrusel').modal('show');
+};
+
+function hideCarrusel(){
+    $('#modalCarrusel').modal('hide')
+};
+
 function saveValidateForm(){
     const nom = document.getElementById("basic-icon-default-fullname").value;
     const app = document.getElementById("basic-icon-default-lastname").value;
@@ -50,20 +58,20 @@ function saveValidateForm(){
         fecha: fecha,
         number: generarPhoneNumber(),
         additional_data: {
-        logro: achi,
-        metas: materials,
-        tema: theme,
-        tema_why: document.getElementById("basic-icon-default-whypasion").value,
-        actividades: document.getElementById("basic-icon-default-activities").value,
-        materias: materials,
-        materias_why: document.getElementById("basic-icon-default-whymaterials").value,
-        admirar: document.getElementById("basic-icon-default-admire").value,
-        padres: parents,
-        padres_why: document.getElementById("basic-icon-default-whyparents").value,
-        carrera: careerspecific,
-        carrera_why: document.getElementById("basic-icon-default-whycareerspecific").value,
-        empresas: companys,
-        url: link
+            logro: achi,
+            metas: materials,
+            tema: theme,
+            tema_why: document.getElementById("basic-icon-default-whypasion").value,
+            actividades: document.getElementById("basic-icon-default-activities").value,
+            materias: materials,
+            materias_why: document.getElementById("basic-icon-default-whymaterials").value,
+            admirar: document.getElementById("basic-icon-default-admire").value,
+            padres: parents,
+            padres_why: document.getElementById("basic-icon-default-whyparents").value,
+            carrera: careerspecific,
+            carrera_why: document.getElementById("basic-icon-default-whycareerspecific").value,
+            empresas: companys,
+            url: link
         }
     };
 
@@ -165,8 +173,19 @@ function enviarResultadosAPIEscala(rasgos, token, accountId) {
         },
         contacted: true,
         custom: {
-            cf_name_text: "Resultado de test",
-            resultados: rasgos
+            contact_fecha_nacimiento_jyto_date: rasgos.fecha,
+            contact_logros_lmxy_text: rasgos.additional_data.logro,
+            cf_contact_materia_o_actividades_rmez_text: rasgos.additional_data.materias,
+            cf_contact_porque_materia_o_actividades_zzoe_text: rasgos.additional_data.materias_why,
+            cf_contact_actividades_vobw_text: rasgos.additional_data.actividades,
+            cf_contact_materio_o_tema_emjw_text: rasgos.additional_data.tema,
+            contact_porque_materia_o_tema_fopq_text: rasgos.additional_data.tema_why,
+            cf_contact_admiras_fyay_text: rasgos.additional_data.admirar,
+            cf_contact_papas_snaj_text: rasgos.additional_data.padres,
+            cf_contact_porque_papas_olvk_text: rasgos.additional_data.padres_why,
+            cf_contact_tu_carrera_ioea_text: rasgos.additional_data.carrera,
+            cf_contact_porque_tu_lovh_text: rasgos.additional_data.carrera_why,
+            cf_contact_empresas_kkhn_text: rasgos.additional_data.empresas
         },
         marketable: true,
         notes: resumen,
