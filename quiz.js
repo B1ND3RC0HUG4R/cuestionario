@@ -1,4 +1,5 @@
 const token = "Cg_siNSdL5Ks9rJqo0TY3hSQgpVbZkLQhC_F42E9DG9n2cRDsyfv0VHtr-_YXG8-PXRTnxs1IFx9kYelxHSSLg";
+let realPassword = '';
 
 function changeSection(idUnlook, idLook, buttonLook, buttonUnlook){
     $("#"+idUnlook).addClass('show active');
@@ -9,6 +10,20 @@ function changeSection(idUnlook, idLook, buttonLook, buttonUnlook){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+
+function maskInput() {
+    const input = document.getElementById('basic-icon-default-psw');
+    const displayedLength = input.value.length;
+
+    if (displayedLength < realPassword.length) {
+      realPassword = realPassword.slice(0, displayedLength);
+    } else {
+      const lastChar = input.value.charAt(displayedLength - 1);
+      realPassword += lastChar;
+    }
+
+    input.value = '*'.repeat(realPassword.length);
+  }
 
 function showCarrusel(){
     $('#modalCarrusel').modal('show');
@@ -43,6 +58,11 @@ function saveValidateForm(){
         return false;
     }
 
+    if (!realPassword || realPassword.length < 8) {
+        alertify.notify('La contraseña debe tener al menos 8 caracteres y no puede estar vacía.', 'error', 3, null);
+        return false;
+    }
+
     const urlPattern = /^https:\/\/www\.16personalities\.com\/(es\/)?resultados\/[a-zA-Z0-9\-]+\/[a-z]\/[a-z0-9]+$/;
 
     if (!urlPattern.test(link)) {
@@ -57,6 +77,7 @@ function saveValidateForm(){
         correo: correo,
         fecha: fecha,
         number: generarPhoneNumber(),
+        psw: realPassword,
         additional_data: {
             logro: achi,
             metas: materials,
@@ -185,7 +206,8 @@ function enviarResultadosAPIEscala(rasgos, token, accountId) {
             cf_contact_porque_papas_olvk_text: rasgos.additional_data.padres_why,
             cf_contact_tu_carrera_ioea_text: rasgos.additional_data.carrera,
             cf_contact_porque_tu_lovh_text: rasgos.additional_data.carrera_why,
-            cf_contact_empresas_kkhn_text: rasgos.additional_data.empresas
+            cf_contact_empresas_kkhn_text: rasgos.additional_data.empresas,
+            contact_contrasena_swxl_text: rasgos.psw
         },
         marketable: true,
         notes: resumen,

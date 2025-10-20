@@ -296,22 +296,45 @@
                                       <span class="input-group-text" id="basic-default-lastname2">*</span>
                                     </div>
                                   </div>
-                                  <div class="mb-3">
-                                    <label class="form-label" for="basic-icon-default-email" style="color:#b99853;">Correo</label>
-                                    <div class="input-group input-group-merge" style="border:3px solid #b99853; border-radius:11px;">
-                                      <span class="input-group-text"><i class="bx bxs-envelope"></i></span>
-                                      <input
-                                        type="text"
-                                        id="basic-icon-default-email"
-                                        class="form-control"
-                                        placeholder=" ejemplo.correo@ejemplo.com"
-                                        aria-label=" ejemplo.correo@ejemplo.com"
-                                        aria-describedby="basic-icon-default-email2"
-                                      />
-                                      <span class="input-group-text" id="basic-default-email2">*</span>
+                                  <!-- div doble form-->
+                                  <div class="row"> 
+                                    <div class="col-lg-6 mb-4 mb-xl-0">
+                                      <div class="mb-3">
+                                        <label class="form-label" for="basic-icon-default-email" style="color:#b99853;">Correo</label>
+                                        <div class="input-group input-group-merge" style="border:3px solid #b99853; border-radius:11px;">
+                                          <span class="input-group-text"><i class="bx bxs-envelope"></i></span>
+                                          <input
+                                            type="text"
+                                            id="basic-icon-default-email"
+                                            class="form-control"
+                                            placeholder=" ejemplo.correo@ejemplo.com"
+                                            aria-label=" ejemplo.correo@ejemplo.com"
+                                            aria-describedby="basic-icon-default-email2"
+                                          />
+                                          <span class="input-group-text" id="basic-default-email2">*</span>
+                                        </div>
+                                        <div class="form-text" style="color:#b99853;">Puedes agregar números, letras y caracteres.</div>
+                                      </div>
                                     </div>
-                                    <div class="form-text" style="color:#b99853;">Puedes agregar numeros, letras y caracteres.</div>
+                                    <div class="col-lg-6">
+                                      <label class="form-label" for="basic-icon-default-psw" style="color:#b99853;">Contraseña <i class='bx  bx-help-circle' title="La contraseña que ingreses aquí sera usada para tu perfil que vamos a crear." id="activarCarrusel"></i> </label>
+                                      <div class="input-group input-group-merge" style="border:3px solid #b99853; border-radius:11px;">
+                                        <span id="basic-icon-default-psw2" class="input-group-text"><i class="bx bxs-key"></i></span>
+                                        <input
+                                          type="text"
+                                          id="basic-icon-default-psw"
+                                          class="form-control"
+                                          placeholder=" Mi_contraseña123"
+                                          aria-label=" Mi_contraseña123"
+                                          aria-describedby="basic-icon-default-psw2"
+                                          onkeyup="maskInput()"
+                                        />
+                                        <span class="input-group-text" id="basic-default-psw2">*</span>
+                                      </div>
+                                      <div class="form-text" style="color:#b99853;">La contraseña debe ser minimo de 8 caracteres puedes agregar números, letras y caracteres.</div>
+                                    </div>
                                   </div>
+                                  <!-- termina div doble form-->
                                   <div class="mb-3">
                                     <label class="form-label" for="html5-date-input" style="color:#b99853;">Fecha de Nacimiento <i class='bx  bx-help-circle' title="Agrega tu fecha de nacimiento, ocupando el icono de calendario del lado derecho." id="activarCarrusel"></i> </label> 
                                     <div class="input-group input-group-merge" style="border:3px solid #b99853; border-radius:11px;">
