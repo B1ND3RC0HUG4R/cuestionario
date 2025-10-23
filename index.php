@@ -611,7 +611,7 @@
                         <div class="tab-pane fade" id="navs-justified-messages" role="tabpanel">
                           <h3 style="color:#b99853;">¡Gracias por tomarte el tiempo para contestar la encuesta!</h3>
                           <p class="mb-0" style="color:#b99853;">
-                            Te hemos enviado un correo de parte del equipo "La Guía de la Vida", pronto nos pondremos en contacto contigo
+                            Pronto nos pondremos en contacto contigo el equipo de "La Guía de la Vida"
                           </p>
                         </div>
                       </div>
