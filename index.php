@@ -608,10 +608,10 @@
                       <!-- section quiz | seccion eliminada recuperar en archivo quiz-backup.txt -->
 
                         <!-- section message -->
-                        <div class="tab-pane fade" id="navs-justified-messages" role="tabpanel">
-                          <h3 style="color:#b99853;">¡Gracias por tomarte el tiempo para contestar la encuesta!</h3>
+                        <div class="tab-pane fade" id="navs-justified-messages" role="tabpanel" style="text-align: center;">
+                          <h3 style="color:#b99853;">¡Gracias por responder el cuestionario!</h3>
                           <p class="mb-0" style="color:#b99853;">
-                            Pronto nos pondremos en contacto contigo el equipo de "La Guía de la Vida"
+                            Revisa tu correo para las instrucciones de los siguientes pasos.
                           </p>
                         </div>
                       </div>
